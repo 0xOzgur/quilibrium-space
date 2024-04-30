@@ -34,9 +34,7 @@ font-weight:initial;
 .footer {
 max-height: fit-content;
 margin-top: -150px;
-margin-bottom: -50px;
-  
-}
+margin-bottom: -50px;}
 
 @layer utilities {
   .text-balance {
