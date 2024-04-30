@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 235, 23, 23;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,6 +24,18 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.header {font-size: x-large;
+font-style:inherit;
+font-weight:initial;
+}
+
+.footer {
+max-height: fit-content;
+margin-top: -150px;
+margin-bottom: -50px;
+  
 }
 
 @layer utilities {
