@@ -90,7 +90,7 @@ export default function Home() {
         </a>
 
         <a
-           //href="/projects"
+           href="/projects"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-black-300 hover:bg-red-500 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
