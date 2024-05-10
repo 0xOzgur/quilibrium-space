@@ -22,7 +22,7 @@ export default function Home() {
               height={24}
               priority
             /> 
-          </a> <div className="header">Space</div>
+          </a> <div className="header"><b>Space</b></div>&nbsp;Beta
         </div>
       </div>
 
@@ -37,7 +37,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
+      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-6xl lg:grid-cols-5 lg:text-left">
         <a
           href="https://docs.quilibrium.space/"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-black-300 hover:bg-red-500 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
@@ -62,13 +62,30 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className="mb-3 text-2xl font-semibold">
-            Learn & Build{" "}
+            Learn{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
           <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Quilibrium deeply and build!
+            Learn about Quilibrium deeply! - Source: Quilibrium Docs
+          </p>
+        </a>
+
+        <a
+          href="https://quilibrium.com/labs"
+          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-black-300 hover:bg-red-500 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2 className="mb-3 text-2xl font-semibold">
+            Build{" "}
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+          </h2>
+          <p className="m-0 max-w-[30ch] text-sm opacity-50">
+            Play around and and build! - Source: Quilibrium Labs
           </p>
         </a>
 
@@ -105,8 +122,9 @@ export default function Home() {
             Reach the important links and community.
           </p>
         </a>
+        
       </div>
-    <div className="footer">Made with ❤️ by Quilibrium Lovers</div>
+    <div className="footer">Made with ❤️ by <b><a href="https://www.quilibrium.com" className="group rounded-lg border border-transparent px-1 py-1 transition-colors hover:border-black-300 hover:bg-red-500 hover:dark:border-neutral-700 hover:dark:bg-neutral-100/30">Quilibrium</a> </b>Lovers</div>
     </main>
   );
 }
