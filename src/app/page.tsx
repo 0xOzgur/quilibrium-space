@@ -90,7 +90,7 @@ export default function Home() {
         </a>
 
         <a
-           //href="/projects"
+          // href=""
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-black-300 hover:bg-red-500 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -124,7 +124,7 @@ export default function Home() {
         </a>
         
       </div>
-    <div className="footer">Made with ❤️ by <b><a href="https://www.quilibrium.com" className="group rounded-lg border border-transparent px-1 py-1 transition-colors hover:border-black-300 hover:bg-red-500 hover:dark:border-neutral-700 hover:dark:bg-neutral-100/30">Quilibrium</a> </b>Lovers</div>
+    <div className="footer">Made with ❤️ by <b><a href="https://www.quilibrium.com" className="group rounded-lg border border-transparent px-1 py-1 transition-colors hover:border-black-300 hover:bg-red-500 hover:dark:border-neutral-700 hover:dark:bg-neutral-100/30">Quilibrium</a> </b>Lovers </div> <div className="footer2">Sponsored by <a href="https://www.cherryservers.com/?affiliate=676XHODW" className="group rounded-lg border border-transparent px-1 py-1 transition-colors hover:border-black-300 hover:bg-red-500 hover:dark:border-neutral-700 hover:dark:bg-neutral-100/30">CherryServers</a></div>
     </main>
   );
 }
