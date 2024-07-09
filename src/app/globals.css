@@ -24,25 +24,211 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  max-width: 80%; /* Sayfanın maksimum genişliğini belirler */
+  margin: 0 auto; /* Üst ve alt marjı 0, sağ ve sol marjı otomatik olarak ayarlar */
 }
 
 .header {font-size: x-large;
 font-style:inherit;
-font-weight:initial;
+/* font-weight:initial;*/
 }
 
-.footer {
-max-height: fit-content;
-margin-top: -150px;
-margin-bottom: -70px;}
+.header-menu {
+  display: flex; /* Flexbox modelini etkinleştirir */
+  gap: 0.75rem; /* Öğeler arasında 1rem boşluk bırakır */
+  width: 100%; /* Genişliği arttır */
+}
 
-.footer2 {
-  max-height: fit-content;
-  margin-top: -120px;
-  margin-bottom: -70px;}
+.header-menu li {
+
+  font-weight: 600;
+  border-color: #000000; 
+  color: #ffffff; 
+  background-color: #972222; 
+  flex-grow: 1; 
+  border-radius: 1rem;
+  padding: 0.5rem; /* Tüm kenarlardan 1rem boşluk */
+  border-radius: 8px; /* Köşeleri yuvarlatmak için */
+  padding: 10px;
+}
+
+.header-menu li:hover {
+
+  font-weight: 600;
+  border-color: #000000; 
+  color: #ffffff; 
+  background-color: #bb6e6e; 
+  flex-grow: 1; 
+  border-radius: 1rem;
+  padding: 0.5rem; /* Tüm kenarlardan 1rem boşluk */
+  border-radius: 8px; /* Köşeleri yuvarlatmak için */
+  padding: 10px;
+}
+
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+
+header {
+  color: #fff;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Flexbox modelini etkinleştirir */
+}
+
+.cards {
+  display: flex; /* Flex kutu modelini etkinleştirir */
+  flex-wrap: wrap; /* Çoklu satırlara izin verir */
+  justify-content: center; /* Öğeleri yatay olarak merkezler */
+  gap: 1rem; /* Öğeler arası boşluk */
+  width: 100%; /* Genişliği arttır */
+  max-width: 100%; /* Maksimum genişlik, ihtiyacınıza göre ayarlayın */
+  margin: auto; /* Merkezde hizalar */
+}
+
+.card {
+  display: flex; /* flex kutu modelini etkinleştirir */
+  flex-grow: 1; /* Flex öğesinin mümkün olduğunca çok yer kaplamasını sağlar */
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem; /* Tüm kenarlardan 1rem boşluk */
+  background-color: #fff; /* Gri arka plan rengi, bg-gray-200'e karşılık gelir */
+  border-radius: 1rem; /* Kenar yuvarlaklığı, rounded-lg'ye karşılık gelir */
+  box-shadow: 0 30px 30px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* Gölge efekti, shadow'a karşılık gelir */
+  flex-direction: column; /* Öğeleri dikey sıralar */
+  gap: 0.5rem; /* Öğeler arası boşluk */
+}
+
+.card:hover {
+  display: flex;
+  flex-grow: 1; 
+  flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: 0 50px 50px 0 rgba(0, 0, 0, 0.5), 0 1px 2px 0 rgba(0, 0, 0, 0.06); 
+  flex-direction: column; 
+  gap: 0.5rem; 
+  transform: scale(1.01); /* İçeriği %10 büyüt */
+}
+
+.p-logo {
+  width: 4rem; /* 16 tailwind units */
+  height: 4rem; /* 16 tailwind units */
+  object-fit: cover;
+  border-radius: 9999px; /* Full circle, equivalent to 'rounded-full' in Tailwind */
+}
+
+.p-social-logo {
+  width: 1.5rem; /* 6 tailwind units */
+  height: 1.5rem; /* 6 tailwind units */
+}
+
+/* Inline style için CSS değişkeni */
+:root {
+  --card-flex-basis: calc(33.333% - 1rem);
+}
+
+h3.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+}
+
+.card-content {
+  /* Define styles specific to card content here */
+  padding: 1%;
+  font-size: 1rem;
+  color: #4a5568;
+  text-align: left; 
+}
+
+.card-category {
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+  background-color: #eff1f5;
+  text-align: left; /* Metni sola hizala */
+  border: 1px solid #ccc; /* Gri tonunda bir çerçeve */
+  border-radius: 8px; /* Köşeleri yuvarlatmak için */
+  padding: 8px;
+  max-width: 100%; /* Maksimum genişlik */
+  margin-left: 0; /* Sol marjı sıfırla, öğeyi sola yasla */
+  margin-right: auto;
+}
+
+.card-links {
+  display: flex; /* Flexbox modelini etkinleştir */
+  justify-content: center; /* İçerikleri yatay eksende merkeze hizala */
+  gap: 1rem;
+}
+
+.filter-category {
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+  background-color: #fff;
+  text-align: left; /* Metni sola hizala */
+  border: 1px solid #ccc; /* Gri tonunda bir çerçeve */
+  border-radius: 8px; /* Köşeleri yuvarlatmak için */
+  padding: 8px;
+  max-width: 100%; /* Maksimum genişlik */
+  padding: 0.5rem;
+  margin: 0.3rem;
+}
+
+.filter-category:hover {
+  background-color: #e6e6e6; /* Hover durumunda arka plan rengini değiştir */
+  cursor: pointer; /* Fare imlecini işaretçi olarak değiştir */
+}
+
+
+.filter {
+  font-size: 1rem;
+  font-weight: 500;
+  color: fff;
+  text-align: left; /* Metni sola hizala */
+  padding: 8px;
+  max-width: 100%; /* Maksimum genişlik */
+  padding: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: -25rem;
+}
+
+.footer {
+  max-height: fit-content;
+  margin-top: -150px;
+  margin-bottom: -70px;
+  text-align: center; /* Footer metnini ortalar */
+  padding: 1rem; /* Üst ve alttan 1rem boşluk */
+  font-size: 0.875rem; /* Metin boyutunu ayarlar */}
+  
+  .footer2 {
+    max-height: fit-content;
+    margin-top: -120px;
+    margin-bottom: -70px;}
+    
+    .footer a {
+      display: inline-block; 
+      border-radius: 0.5rem; 
+      padding: 0.25rem 0.5rem; 
+      transition: all 0.3s ease;
+    }
+    
+    .footer a:hover {
+      border-color: #000000; 
+      background-color: #f56565; 
+      color: #ffffff; 
+    }
+    
+    /* Dark mode hover styles */
+    .footer a:hover.dark {
+      border-color: #2a2a2a;
+      background-color: #f0f0f0;
+    }
