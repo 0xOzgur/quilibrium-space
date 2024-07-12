@@ -24,11 +24,33 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-  max-width: 80%; /* Sayfanın maksimum genişliğini belirler */
-  margin: 0 auto; /* Üst ve alt marjı 0, sağ ve sol marjı otomatik olarak ayarlar */
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex; /* Flexbox modelini kullan */
+  flex-direction: column; /* İçerikleri dikey olarak hizala */
 }
 
-.header {font-size: x-large;
+/* Ana konteyner için stil */
+.content-container {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Horizontally centers the content */
+  align-items: flex-start; /* Vertically aligns the content at the top */
+  gap: 20px; /* Adds gap between items */
+  margin-top: 60px;
+  
+}
+
+/* Adjust the main container to align items at the start */
+main.flex {
+  justify-content: flex-start; /* Align content to the start */
+  gap: 20px; /* Add some gap between items */
+}
+
+
+.header {
+  font-size: x-large;
 font-style:inherit;
 /* font-weight:initial;*/
 }
@@ -40,7 +62,6 @@ font-style:inherit;
 }
 
 .header-menu li {
-
   font-weight: 600;
   border-color: #000000; 
   color: #ffffff; 
@@ -53,7 +74,6 @@ font-style:inherit;
 }
 
 .header-menu li:hover {
-
   font-weight: 600;
   border-color: #000000; 
   color: #ffffff; 
@@ -78,43 +98,105 @@ header {
   font-size: 1.5rem;
 }
 
+.header-logo {
+  width: 100%;
+  max-width: 6xl; /* This needs to be converted to a specific value in pixels, ems, or rems */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: monospace;
+  font-size: small;
+}
+
+/* For large screens */
+@media (min-width: 1024px) {
+  .header-logo {
+    display: flex;
+  }
+}
+
+.fixed-head {
+  position: fixed; /* Keeps the element fixed at the bottom of the screen */
+  bottom: 0;
+  left: 0;
+  display: flex; /* Uses flexbox for layout */
+  height: 12rem; /* 48 tailwind units, assuming 1rem = 4 units */
+  width: 100%; /* Full width of its container */
+  align-items: flex-end; /* Aligns items to the bottom */
+  justify-content: center; /* Centers items horizontally */
+  background-image: linear-gradient(to top, white, white); /* Gradient background from white to white */
+}
+
+/* Dark mode styles */
+.dark .fixed-head {
+  background-image: linear-gradient(to top, black, black); /* Gradient background from black to black in dark mode */
+}
+
+/* Large screen adjustments */
+@media (min-width: 1024px) {
+  .fixed-head {
+    position: static; /* Resets position for large screens */
+    height: auto; /* Resets height for large screens */
+    background: none; /* Removes background for large screens */
+  }
+}
+
 .flex {
   display: flex;
   align-items: center;
   gap: 1rem; /* Flexbox modelini etkinleştirir */
 }
 
-.cards {
-  display: flex; /* Flex kutu modelini etkinleştirir */
-  flex-wrap: wrap; /* Çoklu satırlara izin verir */
-  justify-content: center; /* Öğeleri yatay olarak merkezler */
-  gap: 1rem; /* Öğeler arası boşluk */
-  width: 100%; /* Genişliği arttır */
-  max-width: 100%; /* Maksimum genişlik, ihtiyacınıza göre ayarlayın */
-  margin: auto; /* Merkezde hizalar */
+.main-flex {
+  display: flex; /* Enables flexbox layout */
+  flex-direction: column; /* Stacks items vertically */
+  align-items: center; /* Centers items horizontally */
+  justify-content: space-between; /* Distributes items evenly, with first item at start and last item at end */
+  padding: 5%; /* Adds padding around the content */
+  min-height: 100vh; /* Ensures the element takes up at least the full height of the viewport */
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Sütun sayısını ihtiyaca göre ayarlayın */
+  gap: 20px; /* Kartlar arasındaki boşluk */
+  padding: 20px 50px 50px 50px; /* Üst padding'i azaltıldı */
+  width: 100%;
+  max-width: 100%;
+  align-items: start; /* .card öğelerini üstte sabitler */
 }
 
 .card {
-  display: flex; /* flex kutu modelini etkinleştirir */
-  flex-grow: 1; /* Flex öğesinin mümkün olduğunca çok yer kaplamasını sağlar */
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 1rem; /* Tüm kenarlardan 1rem boşluk */
-  background-color: #fff; /* Gri arka plan rengi, bg-gray-200'e karşılık gelir */
-  border-radius: 1rem; /* Kenar yuvarlaklığı, rounded-lg'ye karşılık gelir */
-  box-shadow: 0 30px 30px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* Gölge efekti, shadow'a karşılık gelir */
-  flex-direction: column; /* Öğeleri dikey sıralar */
-  gap: 0.5rem; /* Öğeler arası boşluk */
+  display: flex; /* Flexbox modelini etkinleştir */
+  flex-direction: column; /* İçeriği dikey yönde sırala */
+  justify-content: space-between; /* İçerik arasında boşluk bırak */
+  min-height: 200px; /* Kartların minimum yüksekliğini belirle */
+  padding: 1rem; /* İç boşluk */
+  background-color: #fff; /* Arka plan rengi */
+  border-radius: 1rem; /* Kenar yuvarlaklığı */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+  flex-grow: 0;
+}
+
+/* Ekran boyutuna göre medya sorguları */
+@media (max-width: 768px) {
+  .card {
+    min-width: 200px; /* Daha küçük ekranlar için kart genişliği */
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-container {
+    flex-direction: column; /* Çok küçük ekranlarda kartları dikey olarak istifler */
+    align-items: center; /* Kartları merkeze hizalar */
+  }
+  .card {
+    max-width: 100%; /* Kartların tam genişlik almasını sağlar */
+  }
 }
 
 .card:hover {
-  display: flex;
-  flex-grow: 1; 
-  flex-wrap: wrap;
-  justify-content: center;
   box-shadow: 0 50px 50px 0 rgba(0, 0, 0, 0.5), 0 1px 2px 0 rgba(0, 0, 0, 0.06); 
-  flex-direction: column; 
-  gap: 0.5rem; 
   transform: scale(1.01); /* İçeriği %10 büyüt */
 }
 
@@ -147,6 +229,7 @@ h3.card-title {
   font-size: 1rem;
   color: #4a5568;
   text-align: left; 
+  flex-grow: 1;
 }
 
 .card-category {
@@ -169,6 +252,36 @@ h3.card-title {
   gap: 1rem;
 }
 
+.send-button {
+  background-color: #d13333; /* Kırmızı tonunda bir arka plan rengi */
+  font-weight: bold;
+  color: #fff; /* Beyaz renkli metin */
+  padding: 0.5rem 1rem; /* Yatayda 1rem, dikeyde 0.5rem iç boşluk */
+  border-radius: 0.5rem; /* Kenar yuvarlaklığı */
+  border: none; /* Kenar çizgisi oluşturma */
+  cursor: pointer; /* İmleci işaretçi olarak değiştir */
+  margin-bottom: 10px; /* Alt boşluğu sıfırla */
+  margin-top: -50px;
+}
+
+.send-button:hover {
+  background-color: #830e0e; /* Kırmızı tonunda bir arka plan rengi */
+}
+
+.filter {
+  font-size: 1rem;
+  font-weight: 500;
+  color: fff;
+  text-align: left; /* Metni sola hizala */
+  padding: 8px;
+  max-width: 100%; /* Maksimum genişlik */
+  padding: 1rem;
+  margin-bottom: auto; /* Alt boşluğu sıfırla */
+  margin-left: auto; /* Sol marjı otomatik ayarla */
+  margin-right: auto; /* Sağ marjı otomatik ayarla */
+  margin-top: 20px;
+}
+
 .filter-category {
   font-size: 1rem;
   font-weight: 500;
@@ -189,25 +302,11 @@ h3.card-title {
 }
 
 
-.filter {
-  font-size: 1rem;
-  font-weight: 500;
-  color: fff;
-  text-align: left; /* Metni sola hizala */
-  padding: 8px;
-  max-width: 100%; /* Maksimum genişlik */
-  padding: 0.5rem;
-  margin-top: 2rem;
-  margin-bottom: -25rem;
-}
-
 .footer {
   max-height: fit-content;
-  margin-top: -150px;
-  margin-bottom: -70px;
   text-align: center; /* Footer metnini ortalar */
   padding: 1rem; /* Üst ve alttan 1rem boşluk */
-  font-size: 0.875rem; /* Metin boyutunu ayarlar */}
+  font-size: 1rem; /* Metin boyutunu ayarlar */}
   
   .footer2 {
     max-height: fit-content;
@@ -216,8 +315,7 @@ h3.card-title {
     
     .footer a {
       display: inline-block; 
-      border-radius: 0.5rem; 
-      padding: 0.25rem 0.5rem; 
+      border-radius: 0.4rem; 
       transition: all 0.3s ease;
     }
     
