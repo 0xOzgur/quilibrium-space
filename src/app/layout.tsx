@@ -6,8 +6,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Quil Rocks",
-  description: "Traditional Rocks Collecion, on Quilibrium!",
+  title: "Quilibrium Space",
+  description: "Docs, tutorials, projects and many more about Quilibrium",
 };
 
 export default function RootLayout({

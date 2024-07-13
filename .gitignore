@@ -38,5 +38,3 @@ next-env.d.ts
 # github actions
 /.github
 /.github/workflows/
-
-/public/collection/
