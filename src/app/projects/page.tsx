@@ -46,7 +46,7 @@ export default function Home() {
                 <li><a href="https://docs.quilibrium.space">Docs</a></li>
                 <li><a href="/learn">Learn</a></li>
                 <li><a href="/build">Build</a></li>
-                <li><a href="/build">Send Project</a></li>
+                <li><a href="https://form.jotform.com/241954100243042">Send Project</a></li>
               </ul>
             </nav>
           </header>

@@ -158,12 +158,12 @@ header {
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Sütun sayısını ihtiyaca göre ayarlayın */
+  align-items: start; /* .card öğelerini üstte sabitler */
+  grid-template-columns: repeat(4, 1fr); /* Sütun sayısını ihtiyaca göre ayarlayın */
   gap: 20px; /* Kartlar arasındaki boşluk */
   padding: 20px 50px 50px 50px; /* Üst padding'i azaltıldı */
-  width: 100%;
+  width: 800%;
   max-width: 100%;
-  align-items: start; /* .card öğelerini üstte sabitler */
 }
 
 .card {
