@@ -44,8 +44,8 @@ export default function Home() {
               <ul className="header-menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="https://docs.quilibrium.space">Docs</a></li>
-                <li><a href="/learn">Learn</a></li>
-                <li><a href="/build">Build</a></li>
+                <li><a href="https://quilibrium.com/docs">Learn</a></li>
+                <li><a href="https://quilibrium.com/labs">Build</a></li>
                 <li><a href="https://form.jotform.com/241954100243042">Send Project</a></li>
               </ul>
             </nav>
@@ -53,7 +53,6 @@ export default function Home() {
         </div>
 
       <div className="content-container">
-      
         <div className="filter">CATEGORIES: 
   <span className="filter-category"  onClick={() => setSelectedCategory('')} style={{cursor: 'pointer', textDecoration: 'underline'}} >All</span>
   {[...uniqueCategories].map((category, index) => (

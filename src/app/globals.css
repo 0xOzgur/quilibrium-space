@@ -39,7 +39,7 @@ body {
   align-items: flex-start; /* Vertically aligns the content at the top */
   gap: 20px; /* Adds gap between items */
   margin-top: 60px;
-  
+  max-width: 80% !important;
 }
 
 /* Adjust the main container to align items at the start */
@@ -162,7 +162,7 @@ header {
   grid-template-columns: repeat(4, 1fr); /* Sütun sayısını ihtiyaca göre ayarlayın */
   gap: 20px; /* Kartlar arasındaki boşluk */
   padding: 20px 50px 50px 50px; /* Üst padding'i azaltıldı */
-  width: 800%;
+  width: 100%;
   max-width: 100%;
 }
 
@@ -214,7 +214,7 @@ header {
 
 /* Inline style için CSS değişkeni */
 :root {
-  --card-flex-basis: calc(33.333% - 1rem);
+  --card-flex-basis: calc(20% - 1rem);
 }
 
 h3.card-title {
@@ -228,7 +228,7 @@ h3.card-title {
   padding: 1%;
   font-size: 1rem;
   color: #4a5568;
-  text-align: left; 
+  text-align: center; 
   flex-grow: 1;
 }
 
